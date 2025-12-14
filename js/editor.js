@@ -84,7 +84,7 @@ Familienbaum.prototype.create_editing_form = function(node_of_dag, node_of_dag_a
 		this.draw(false);
 	});
 	// Member node
-	if (is_member(node_of_dag)) {
+	if (is_member(node_of_dag) && False) {
 		if (inout.in == 0) { // no parents
 			form.append("button").attr("type", "button").html("Add parents").on("click", event => {
 				// 1. Update the member data
