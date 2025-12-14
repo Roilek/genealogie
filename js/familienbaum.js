@@ -9,7 +9,7 @@ class Familienbaum
 		this.g = this.svg.append("g");
 		this.zoom = d3.zoom().on("zoom", event => this.g.attr("transform", event.transform));
 		this.svg.call(this.zoom);
-		this.info = this.add_info_text(svg);
+		//this.info = this.add_info_text(svg);
 		// Set the duration of a transition
 		this.transition_milliseconds = 500;
 		// Create the DAGs
@@ -149,7 +149,8 @@ class Familienbaum
 		add_images(circle_group);
 		// Add editing functionality
 		if (this.editing_div) {
-			node_enter_group.append("g")
+			node_enter_group.filter(node => is_member(node))
+				.append("g")
 				.attr("cursor", "pointer")
 				.on("click",
 					(event, node) => {

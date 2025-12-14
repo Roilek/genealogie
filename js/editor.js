@@ -48,7 +48,7 @@ Familienbaum.prototype.create_editing_form = function(node_of_dag, node_of_dag_a
 		});
 	}
 	// Add a button and the according callback
-	form.append("button").attr("type", "button").html("All parents").on("click", event => {
+	form.append("button").attr("type", "button").html("Voir ses ascendants").on("click", event => {
 		let parents = Array.from(this.dag_all.parents(node_of_dag_all));
 		while (parents.length > 0) {
 			let parent = parents.pop();
@@ -58,7 +58,7 @@ Familienbaum.prototype.create_editing_form = function(node_of_dag, node_of_dag_a
 		this.draw(false);
 	});
 	// Add a button and the according callback
-	form.append("button").attr("type", "button").html("All children").on("click", event => {
+	form.append("button").attr("type", "button").html("Voir ses descendants").on("click", event => {
 		let children = Array.from(node_of_dag_all.children());
 		while (children.length > 0) {
 			let child = children.pop();
@@ -68,7 +68,7 @@ Familienbaum.prototype.create_editing_form = function(node_of_dag, node_of_dag_a
 		this.draw(false);
 	});
 	// Add a button and the according callback
-	form.append("button").attr("type", "button").html("All children-in-law").on("click", event => {
+	form.append("button").attr("type", "button").html("Voir ses descendants et leurs conjoints").on("click", event => {
 		let children = Array.from(node_of_dag_all.children());
 		while (children.length > 0) {
 			let child = children.pop();
